@@ -25,6 +25,7 @@ h1 {
   margin-bottom: 25px;
 }
 
+/* Style du plateau de jeu - grille */
 #plateau {
   display: grid;
   grid-template-columns: repeat(10, 50px);
@@ -66,4 +67,56 @@ h1 {
 
 .pion-joueur2 {
   background: #000000;
+}
+
+/* Style du pion sélectionné*/
+.pion.selectionne {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+/* Style des cases possibles pour les mouvements */
+.case-possible {
+  background: rgba(255, 255, 0, 0.5);
+}
+
+.info-jeu {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#nouvelle-partie {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #32cd32;
+  font-family: "Courier New", monospace;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  &:hover {
+    background: #228b22;
+  }
+}
+
+.dame {
+  border: 4px solid gold;
+}
+
+/* Animation pour l'effet de capture d'une pièce */
+@keyframes capture {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  1000% {
+    transform: scale(0);
+  }
+}
+
+.capture {
+  animation: capture 0.5s forwards;
 }
